@@ -8,6 +8,7 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProgramController;
+use App\Http\Controllers\AboutUsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -61,3 +62,6 @@ Route::prefix('program')->group(function () {
     Route::get('/magang', [ProgramController::class, 'magang']);
     Route::get('/kunjungan-industri', [ProgramController::class, 'kunjungan']);
 });
+
+// Route biasa NO 5
+Route::get('/about-us', [AboutUsController::class, 'index']);
