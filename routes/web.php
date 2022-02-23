@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\NewsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,11 +42,14 @@ use App\Http\Controllers\ProductController;
 
 // Praktikum 3
 Route::get('/', [HomeController::class,'index']); //NO 1
-// Route prefix
+// Route prefix NO 2
 Route::prefix('category')->group(function () {
     Route::get('/marbel-edu-games', [ProductController::class, 'eduGames']);
     Route::get('/marbel-and-friends-kids-games', [ProductController::class, 'kidsGames']);
     Route::get('/riri-story-books', [ProductController::class, 'storyBooks']);
     Route::get('/kolak-kids-songs', [ProductController::class, 'kidsSongs']);
 });
-    
+
+// Route param NO 3
+Route::get('/news', [NewsController::class, 'listNews']);
+Route::get('/news/{title}', [NewsController::class, 'news']);
