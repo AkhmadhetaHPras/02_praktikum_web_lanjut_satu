@@ -7,6 +7,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\ProgramController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -53,3 +54,10 @@ Route::prefix('category')->group(function () {
 // Route param NO 3
 Route::get('/news', [NewsController::class, 'listNews']);
 Route::get('/news/{title}', [NewsController::class, 'news']);
+
+// Route prefix NO 4
+Route::prefix('program')->group(function () {
+    Route::get('/karir', [ProgramController::class, 'karir']);
+    Route::get('/magang', [ProgramController::class, 'magang']);
+    Route::get('/kunjungan-industri', [ProgramController::class, 'kunjungan']);
+});
