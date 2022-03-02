@@ -36,3 +36,6 @@ Route::get('/', [HomeController::class,'index']);
 
 // // Route biasa NO 5
 // Route::get('/about-us', [AboutUsController::class, 'index']);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
