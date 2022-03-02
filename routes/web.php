@@ -2,6 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\DinningController;
+use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\RoomController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,27 +21,9 @@ use App\Http\Controllers\HomeController;
 
 
 Route::get('/', [HomeController::class,'index']);
-// // Route prefix NO 2
-// Route::prefix('category')->group(function () {
-//     Route::get('/marbel-edu-games', [ProductController::class, 'eduGames']);
-//     Route::get('/marbel-and-friends-kids-games', [ProductController::class, 'kidsGames']);
-//     Route::get('/riri-story-books', [ProductController::class, 'storyBooks']);
-//     Route::get('/kolak-kids-songs', [ProductController::class, 'kidsSongs']);
-// });
-
-// // Route param NO 3
-// Route::get('/news', [NewsController::class, 'listNews']);
-// Route::get('/news/{title}', [NewsController::class, 'news']);
-
-// // Route prefix NO 4
-// Route::prefix('program')->group(function () {
-//     Route::get('/karir', [ProgramController::class, 'karir']);
-//     Route::get('/magang', [ProgramController::class, 'magang']);
-//     Route::get('/kunjungan-industri', [ProgramController::class, 'kunjungan']);
-// });
-
-// // Route biasa NO 5
-// Route::get('/about-us', [AboutUsController::class, 'index']);
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/about', [AboutController::class,'index']);
+Route::get('/contact', [ContactController::class,'index']);
+Route::get('/dinning', [DinningController::class,'index']);
+Route::get('/gallery', [GalleryController::class,'index']);
+Route::get('/news', [NewsController::class,'index']);
+Route::get('/rooms', [RoomController::class,'index']);
