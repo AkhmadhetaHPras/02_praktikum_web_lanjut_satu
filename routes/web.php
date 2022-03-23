@@ -8,6 +8,8 @@ use App\Http\Controllers\DinningController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\RoomController;
+use Illuminate\Support\Facades\Auth;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,6 +21,7 @@ use App\Http\Controllers\RoomController;
 |
 */
 
+Auth::routes();
 
 Route::get('/', [HomeController::class,'index']);
 Route::get('/about', [AboutController::class,'index']);
