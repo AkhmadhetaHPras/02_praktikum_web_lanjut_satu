@@ -30,3 +30,6 @@ Route::get('/dinning', [DinningController::class,'index']);
 Route::get('/gallery', [GalleryController::class,'index']);
 Route::get('/news', [NewsController::class,'index']);
 Route::get('/rooms', [RoomController::class,'index']);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

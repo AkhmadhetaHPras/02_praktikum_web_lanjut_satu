@@ -67,7 +67,12 @@
                             </div>                       
                         </div>
                         <div class="col-sm-6 visible-sm">
-                            <div class="text-right"><button type="button" class="book-now-btn">Book Now</button></div>
+                            @guest
+                                <div class="text-right"><button type="button" class="book-now-btn"><a href="/login">Login</a></button></div>
+                            @endguest
+                            @auth
+                                <div class="text-right"><button type="button" class="book-now-btn">{{ Auth::user()->name }}</button></div>
+                            @endauth
                         </div>
                         <div class="col-md-8 col-sm-12 col-xs-12 remove-padd">
                             <nav class="navbar navbar-default">
@@ -95,7 +100,24 @@
                             </nav>
                         </div>
                         <div class="col-md-2  col-sm-4 col-xs-12 hidden-sm">
-                            <div class="text-right"><button type="button" class="book-now-btn">Book Now</button></div>
+                            @guest
+                                <div class="text-right"><button type="button" class="book-now-btn"><a href="/login">Login</a></button></div>
+                            @endguest
+                            @auth
+                            <div class="text-right"><button type="button" class="book-now-btn">{{ Auth::user()->name }}</button>
+                            <div class="" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        Logout
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </div>
+                            @endauth
                         </div>
                     </div>
                 </div>
