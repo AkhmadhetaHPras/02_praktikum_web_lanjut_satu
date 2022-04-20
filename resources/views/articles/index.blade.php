@@ -5,7 +5,13 @@
     <p>{{ $message }}</p>
 </div>
 @endif
-<table class="table table-bordered" style="width:95%;margin: 0 
+<div class="row">
+    <div style="margin: 0 10% 0 10%;">
+        <a href="{{ route('cetak_pdf') }}" class="btn btn-success">Cetak PDF</a>
+        <a href="{{ route('articles.create') }}" class="btn btn-primary" style="margin-left: 10px;">Tambah Artikel</a>
+    </div>
+</div><br>
+<table class="table table-bordered table-hover" style="width:80%;margin: 0 
 auto;">
     <tr>
         <th>Judul</th>
